@@ -1,6 +1,11 @@
 import express  from "express";
+import dotenv from 'dotenv';
 
-const app = express() 
+const app = express()
+
+dotenv.config()
+
+const port = process.env.PORT || 4001
 
 
 
@@ -59,7 +64,7 @@ const app = express()
     return res.status(200).json(users);
   });
 
-app.listen(5000, () => {
-    console.log( `server running on 5000` );
+app.listen(port, () => {
+    console.log( `server running on ${port}` );
     console.log( `press CTRL+C to stop server` );
 })
