@@ -9,7 +9,8 @@
     "test": "jest",
     "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
     "clean": "rm -rf www/ || true",
-    "build": "npx parcel build src/index.html --public-url /school-web-api",
+    "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && sudo apt-get install zip
+ && zip -r Archive.zip . && cd ..",
     "prod": "tsc && node ./www/index.js"
   },
   "keywords": [],
